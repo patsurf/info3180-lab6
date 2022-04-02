@@ -1,4 +1,4 @@
-# vue3-lab6
+# vue3-lab6- Patricia Surf
 
 This template should help get you started developing with Vue 3 in Vite.
 
