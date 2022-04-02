@@ -4,6 +4,11 @@
  <li class="news__item">News item 2</li>
  <li class="news__item">News item 3</li>
  </ul>
+<template>
+ <ul class="news__list">
+ <li v-for="article in articles"
+class="news__item">{{ article.title }}</li>
+ </ul>
 </template>
 <script>
 export default {
@@ -16,12 +21,13 @@ import NewsList from '@/components/NewsList.vue'
 export default {
  data() {
  return {
- message: "Hello World! Welcome to VueJS"
- };
+ articles: []
+ }
  },
  components: { NewsList }
 }
 created() {
+let self = this;
  fetch('https://newsapi.org/v2/top-headlines?country=us',
 {
  headers: {
@@ -33,6 +39,7 @@ created() {
  })
  .then(function(data) {
  console.log(data);
+ self.articles = data.articles;
  });
  }
 </script>
