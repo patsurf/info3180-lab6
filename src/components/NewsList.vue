@@ -1,0 +1,24 @@
+<template>
+ <ul class="news__list">
+ <li class="news__item">News item 1</li>
+ <li class="news__item">News item 2</li>
+ <li class="news__item">News item 3</li>
+ </ul>
+</template>
+<script>
+export default {
+ data() {
+ return {};
+ },
+};
+<script>
+import NewsList from '@/components/NewsList.vue'
+export default {
+ data() {
+ return {
+ message: "Hello World! Welcome to VueJS"
+ };
+ },
+ components: { NewsList }
+}
+</script>
