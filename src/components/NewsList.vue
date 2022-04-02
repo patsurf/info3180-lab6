@@ -21,4 +21,18 @@ export default {
  },
  components: { NewsList }
 }
+created() {
+ fetch('https://newsapi.org/v2/top-headlines?country=us',
+{
+ headers: {
+ 'Authorization': 'Bearer <your-api-token>'
+ }
+})
+ .then(function(response) {
+ return response.json();
+ })
+ .then(function(data) {
+ console.log(data);
+ });
+ }
 </script>
