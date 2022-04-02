@@ -18,5 +18,25 @@ export default {
 </template>
 
 <style>
-/* Add any component specific styles here */
+ export default {
+     data() {…},
+     methods: {
+     searchNews() {
+     let self = this;
+     fetch('https://newsapi.org/v2/everything?q='+
+    self.searchTerm + '&language=en', {
+     headers: {
+     'Authorization': `Bearer $
+    {import.meta.env.VITE_NEWSAPI_TOKEN}`,
+     }
+    })
+     .then(function(response) {
+     return response.json();
+     })
+     .then(function(data) {
+     console.log(data);
+     self.articles = data.articles;
+     });
+ }
+ }
 </style>
